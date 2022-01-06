@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.31"
+    kotlin("jvm") version "1.6.10"
     application
 }
 
-group = "kr.dragon.dreaming"
+group = "kr.dragon.dreaming.studykotlinintellij"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -17,7 +17,7 @@ dependencies {
 }
 
 tasks.test {
-    useJUnit()
+    useJUnitPlatform()
 }
 
 tasks.withType<KotlinCompile>() {
