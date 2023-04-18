@@ -1,4 +1,5 @@
 fun main() {
+    // Step 1: Learn about nullability
 //    var rocks: Int = null
     var marbles: Int? = null
 
@@ -7,6 +8,7 @@ fun main() {
 //        fishFoodTreats = fishFoodTreats.dec()
 //    }
 
+    // Step 2: Learn about the ? and ?: operators
     var fishFoodTreats: Int? = 6
     fishFoodTreats = fishFoodTreats?.dec()
     fishFoodTreats = fishFoodTreats?.dec() ?: 0
