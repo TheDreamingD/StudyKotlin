@@ -1,7 +1,7 @@
 fun main() {
     // Step 1: Make lists
-    val school1 = listOf("mackerel", "trout", "halibut")
-    println(school1)
+    val school = listOf("mackerel", "trout", "halibut")
+    println(school)
 
     val myList = mutableListOf("tuna", "salmon", "shark")
     myList.remove("shark")
@@ -12,7 +12,7 @@ fun main() {
 
     val mix = arrayOf("fish", 2)
 
-    val numbers1 = intArrayOf(1, 2, 3)
+    val numbers = intArrayOf(1, 2, 3)
 
     val numbers2 = intArrayOf(1, 2, 3)
     val numbers3 = intArrayOf(4, 5, 6)

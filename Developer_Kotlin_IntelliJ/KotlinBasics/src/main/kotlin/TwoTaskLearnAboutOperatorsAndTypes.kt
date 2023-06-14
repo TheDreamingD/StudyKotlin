@@ -36,8 +36,8 @@ fun main(args: Array<String>) {
     val bytes = 0b11010010_01101001_10010100_10010010
 
     // Step 3: Learn the value of variable types
-    var fish1 = 1
-    fish1 = 2
+    var fish = 1
+    fish = 2
     val aquarium = 1
 //    aquarium = 2
 
