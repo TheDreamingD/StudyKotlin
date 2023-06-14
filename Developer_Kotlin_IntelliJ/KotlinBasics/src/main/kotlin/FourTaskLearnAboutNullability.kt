@@ -9,10 +9,10 @@ fun main() {
         fishFoodTreats = fishFoodTreats.dec()
     }
 
-    fishFoodTreats = fishFoodTreats?.dec()
+//    fishFoodTreats = fishFoodTreats?.dec()
 
     fishFoodTreats = fishFoodTreats?.dec() ?: 0
 
     // A point about null pointers
-    val len = s!!.length
+//    val len = s!!.length
 }
