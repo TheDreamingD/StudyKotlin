@@ -3,5 +3,5 @@ fun main(args: Array<String>) {
     println("Hello, world!")
 
     // Step 4: Change the code to use a string template
-    println("Hello, ${args[0]}")
+    println("Hello, ${ args[0] }")
 }
