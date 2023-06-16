@@ -1,7 +1,7 @@
 fun main(args: Array<String>) {
-    println("Hello World!")
+    // Step 2: Add code and run your program
+    println("Hello, world!")
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+    // Step 4: Change the code to use a string template
+    println("Hello, ${args[0]}")
 }
