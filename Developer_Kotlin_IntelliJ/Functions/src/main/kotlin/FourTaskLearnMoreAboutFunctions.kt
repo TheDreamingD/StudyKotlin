@@ -18,14 +18,12 @@ fun randomDay(): String {
 
 // Step 2: Use a when expression
 fun fishFood(day: String): String {
-    val food: String
-    when (day) {
-        "Monday" -> food = "flakes"
-        "Wednesday" -> food = "redworms"
-        "Thursday" -> food = "granules"
-        "Friday" -> food = "mosquitoes"
-        "Sunday" -> food = "plankton"
-        else -> food = "nothing"
+    return when (day) {
+        "Monday" -> "flakes"
+        "Wednesday" -> "redworms"
+        "Thursday" -> "granules"
+        "Friday" -> "mosquitoes"
+        "Sunday" -> "plankton"
+        else -> "nothing"
     }
-    return food
 }
