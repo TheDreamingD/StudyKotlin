@@ -1,6 +1,6 @@
-package five.example.myapp
+package six.example.myapp
 
-class FiveAquarium(var length: Int = 100, var width: Int = 20, var height: Int = 40) {
+class SixAquarium(var length: Int = 100, var width: Int = 20, var height: Int = 40) {
     var volume: Int
         get() = width * height * length / 1000
         set(value) {
