@@ -17,4 +17,7 @@ fun genericsExample() {
 //    if (aquarium3.waterSupply == null) {
 //        println("waterSupply is null")
 //    }
+
+    val aquarium4 = TwoAquarium(TwoLakeWater())
+    aquarium4.addWater()
 }
