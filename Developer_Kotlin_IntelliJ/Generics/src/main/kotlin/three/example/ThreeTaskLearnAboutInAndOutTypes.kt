@@ -18,12 +18,16 @@ fun genericsExample() {
 //        println("waterSupply is null")
 //    }
 
-    val aquarium4 = ThreeAquarium(ThreeLakeWater())
-    aquarium4.waterSupply.filter()
-    aquarium4.addWater()
+//    val aquarium4 = ThreeAquarium(ThreeLakeWater())
+//    aquarium4.waterSupply.filter()
+//    aquarium4.addWater()
 
     val aquarium5 = ThreeAquarium(ThreeTapWater())
     addItemTo(aquarium5)
+
+    val cleaner = ThreeTapWaterCleaner()
+    val aquarium6 = ThreeAquarium(ThreeTapWater())
+    aquarium6.addWater(cleaner)
 }
 
 fun addItemTo(aquarium: ThreeAquarium<ThreeWaterSupply>) = println("item added")
