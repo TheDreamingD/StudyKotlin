@@ -1,3 +1,3 @@
 package two.example
 
-class TwoAquarium<T: Any>(val waterSupply: T)
+class TwoAquarium<T: TwoWaterSupply>(val waterSupply: T)
