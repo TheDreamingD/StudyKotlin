@@ -28,10 +28,13 @@ fun genericsExample() {
     val cleaner = FourTapWaterCleaner()
     val aquarium6 = FourAquarium(FourTapWater())
     aquarium6.addWater(cleaner)
+
+    val aquarium7 = FourAquarium(FourTapWater())
+    isWaterClean<FourTapWater>(aquarium7)
 }
 
 fun addItemTo(aquarium: FourAquarium<FourWaterSupply>) = println("item added")
 
-fun isWaterClean(aquarium: FourAquarium<FourWaterSupply>) {
+fun <T: FourWaterSupply> isWaterClean(aquarium: FourAquarium<T>) {
     println("aquarium water is clean: ${ !aquarium.waterSupply.needsProcessing }")
 }
