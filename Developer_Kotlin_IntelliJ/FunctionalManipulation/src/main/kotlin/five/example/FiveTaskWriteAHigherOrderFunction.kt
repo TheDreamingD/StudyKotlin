@@ -6,7 +6,7 @@ fun main() {
 
 fun fishExamples() {
     val fish = FiveFish("Splashy")
-    with (fish.name) {
-        this.capitalize()
+    myWith(fish.name) {
+        println(capitalize())
     }
 }
