@@ -1,8 +1,8 @@
 package two.example
 
-@file:JvmName("TwoInteropFish")
+//@file:JvmName("TwoInteropFish")
 class TwoInteropFish {
-    companion object {
-        @JvmStatic fun interop()
-    }
+//    companion object {
+//        @JvmStatic fun interop()
+//    }
 }
