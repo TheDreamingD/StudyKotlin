@@ -32,6 +32,8 @@ fun genericsExample() {
     val aquarium7 = FourAquarium(FourTapWater())
     isWaterClean(aquarium7)
     println(aquarium7.hasWaterSupplyOfType<FourTapWater>())
+
+    println(aquarium7.waterSupply.isOfType<FourTapWater>())
 }
 
 fun addItemTo(aquarium: FourAquarium<FourWaterSupply>) = println("item added")
@@ -39,3 +41,5 @@ fun addItemTo(aquarium: FourAquarium<FourWaterSupply>) = println("item added")
 fun <T: FourWaterSupply> isWaterClean(aquarium: FourAquarium<T>) {
     println("aquarium water is clean: ${ !aquarium.waterSupply.needsProcessing }")
 }
+
+inline fun <reified T: FourWaterSupply> FourWaterSupply.isOfType() = this is T
