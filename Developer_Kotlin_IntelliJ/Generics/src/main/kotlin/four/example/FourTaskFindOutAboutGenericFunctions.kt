@@ -31,3 +31,7 @@ fun genericsExample() {
 }
 
 fun addItemTo(aquarium: FourAquarium<FourWaterSupply>) = println("item added")
+
+fun isWaterClean(aquarium: FourAquarium<FourWaterSupply>) {
+    println("aquarium water is clean: ${ !aquarium.waterSupply.needsProcessing }")
+}
