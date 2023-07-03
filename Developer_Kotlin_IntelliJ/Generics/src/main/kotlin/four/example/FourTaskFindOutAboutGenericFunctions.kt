@@ -43,3 +43,5 @@ fun <T: FourWaterSupply> isWaterClean(aquarium: FourAquarium<T>) {
 }
 
 inline fun <reified T: FourWaterSupply> FourWaterSupply.isOfType() = this is T
+
+inline fun <reified R: FourWaterSupply> FourAquarium<*>.hasWaterSupplyOfType() = waterSupply is R
