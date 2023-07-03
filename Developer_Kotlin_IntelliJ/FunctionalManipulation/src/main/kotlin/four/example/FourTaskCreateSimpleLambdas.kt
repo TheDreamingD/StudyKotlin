@@ -6,4 +6,5 @@ fun main() {
 
     val myFish = listOf(FourFish("Flipper"), FourFish("Moby Dick"), FourFish("Dory"))
     println(myFish.filter { it.name.contains("i") })
+    println(myFish.filter { it.name.contains("i") }.joinToString(", ") { it.name })
 }
