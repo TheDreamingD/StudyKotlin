@@ -7,4 +7,6 @@ class FourAquarium<out T: FourWaterSupply>(val waterSupply: T) {
         }
         println("water added")
     }
+
+    inline fun <reified R: FourWaterSupply> hasWaterSupplyOfType() = waterSupply is R
 }
