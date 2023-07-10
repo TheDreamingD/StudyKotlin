@@ -5,7 +5,7 @@ fun main() {
 }
 
 fun runExample() {
-    JavaRun.runNow({
+    JavaRun.runNow {
         println("Passing a lambda as a Runnable")
-    })
+    }
 }
