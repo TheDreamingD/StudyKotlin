@@ -40,4 +40,12 @@ fun main() {
     fish = 2
     val aquarium = 1
 //    aquarium = 2 // error
+
+    var fish1: Int = 12
+    var lakes: Double = 2.5
+
+    val numberOfFish = 5
+    val numberOfPlants = 12
+    println("I have $numberOfFish fish" + " and $numberOfPlants plants")
+    println("I have ${ numberOfFish + numberOfPlants } fish and plants")
 }
