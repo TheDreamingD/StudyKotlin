@@ -9,9 +9,9 @@ fun main() {
         fishFoodTreats = fishFoodTreats.dec()
     }
 
-    fishFoodTreats = fishFoodTreats?.dec()
+//    fishFoodTreats = fishFoodTreats?.dec()
 
     fishFoodTreats = fishFoodTreats?.dec() ?: 0
 
-    val len = s!!.length
+//    val len = s!!.length
 }
