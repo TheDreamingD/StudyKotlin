@@ -1,7 +1,7 @@
 package two
 
-fun main() {
-    printHello()
+fun main(args: Array<String>) {
+    println("Hello, world!")
 }
 
 fun printHello() {
