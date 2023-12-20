@@ -5,9 +5,9 @@ fun main() {
     println(isUnit)
 
     val temperature = 10
-    val isHot = if (temperature > 50) true else false
+    val isHot = if(temperature > 50) true else false
     println(isHot)
 
-    val message = "The water temperature is ${ if (temperature > 50) "too warm" else "OK" }."
+    val message = "The water temperature is ${ if(temperature > 50) "too warm" else "OK" }."
     println(message)
 }
