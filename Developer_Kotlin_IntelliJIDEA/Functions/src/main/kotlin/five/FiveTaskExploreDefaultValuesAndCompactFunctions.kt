@@ -14,6 +14,7 @@ fun swim(speed: String = "fast") {
     println("swimming $speed")
 }
 
+//fun shouldChangeWater(day: String, temperature: Int = 22, dirty: Int = getDirtySensorReading()): Boolean {
 fun shouldChangeWater(day: String, temperature: Int = 22, dirty: Int = 20): Boolean {
     return when {
         isTooHot(temperature) -> true
