@@ -1,8 +1,11 @@
 package four.example.myapp
 
 class FourAquarium(var length: Int = 100, var width: Int = 20, var height: Int = 40) {
-    val volume: Int
+    var volume: Int
         get() = width * height * length / 1000
+        set(value) {
+            height = (value * 1000) / (width * length)
+        }
 
     constructor(numberOfFish: Int) : this() {
         val tank = numberOfFish * 2000 * 1.1
