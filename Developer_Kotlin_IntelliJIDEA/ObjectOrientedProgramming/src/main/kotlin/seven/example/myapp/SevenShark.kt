@@ -1,6 +1,6 @@
 package seven.example.myapp
 
-class SevenShark : SevenAquariumFish(), SevenFishAction {
+class SevenShark : SevenAquariumFish() {
     override val color = "gray"
 
     override fun eat() {
