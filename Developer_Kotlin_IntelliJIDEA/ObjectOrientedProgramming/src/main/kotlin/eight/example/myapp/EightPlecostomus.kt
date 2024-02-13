@@ -1,6 +1,6 @@
 package eight.example.myapp
 
-class EightPlecostomus : EightAquariumFish() {
+class EightPlecostomus : EightFishAction, EightFishColor {
     override val color = "gold"
 
     override fun eat() {
