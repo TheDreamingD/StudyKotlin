@@ -4,7 +4,4 @@ fun main() {
     println("Does it have spaces?".hasSpaces())
 }
 
-fun String.hasSpaces(): Boolean {
-    val found = this.find { it == ' ' }
-    return found != null
-}
+fun String.hasSpaces() = find { it == ' ' } != null
