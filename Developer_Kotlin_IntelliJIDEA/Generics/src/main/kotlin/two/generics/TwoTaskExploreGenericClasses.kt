@@ -9,4 +9,12 @@ fun genericsExample() {
     println("water needs processing: ${ aquarium.waterSupply.needsProcessing }")
     aquarium.waterSupply.addChemicalCleaners()
     println("water needs processing: ${ aquarium.waterSupply.needsProcessing }")
+
+    val aquarium2 = TwoAquarium("string")
+    println(aquarium2.waterSupply)
+
+    val aquarium3 = TwoAquarium(null)
+    if (aquarium3.waterSupply == null) {
+        println("waterSupply is null")
+    }
 }
