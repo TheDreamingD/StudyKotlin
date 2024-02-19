@@ -16,4 +16,4 @@ class TwoLakeWater : TwoWaterSupply(true) {
     }
 }
 
-class TwoAquarium<T: Any?>(val waterSupply: T)
+class TwoAquarium<T: Any>(val waterSupply: T)
