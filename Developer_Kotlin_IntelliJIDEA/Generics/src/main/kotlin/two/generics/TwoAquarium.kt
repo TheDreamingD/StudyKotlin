@@ -15,3 +15,5 @@ class TwoLakeWater : TwoWaterSupply(true) {
         needsProcessing = false
     }
 }
+
+class TwoAquarium<T>(val waterSupply: T)
