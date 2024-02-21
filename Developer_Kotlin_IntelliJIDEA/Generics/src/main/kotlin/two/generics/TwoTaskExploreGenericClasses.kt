@@ -19,5 +19,6 @@ fun genericsExample() {
 //    }
 
     val aquarium4 = TwoAquarium(TwoLakeWater())
+    aquarium4.waterSupply.filter()
     aquarium4.addWater()
 }
