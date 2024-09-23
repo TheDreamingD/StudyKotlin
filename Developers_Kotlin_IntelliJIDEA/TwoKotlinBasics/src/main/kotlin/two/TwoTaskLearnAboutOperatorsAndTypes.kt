@@ -41,7 +41,7 @@ fun main() {
 //    aquarium = 2 // error
 
     var fish1: Int = 12
-    var lake: Double = 2.5
+    var lakes: Double = 2.5
 
     val numberOfFish = 5
     val numberOfPlants = 12
