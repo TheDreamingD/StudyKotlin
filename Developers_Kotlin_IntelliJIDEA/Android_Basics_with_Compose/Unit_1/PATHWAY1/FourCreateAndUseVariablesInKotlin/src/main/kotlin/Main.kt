@@ -1,4 +1,4 @@
 fun main() {
     val count: Int = 2
-    println("You have count unread messages.")
+    println("You have $count unread messages.")
 }
