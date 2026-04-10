@@ -297,6 +297,7 @@
 .gradle/
 .idea/
 /*/**/.gitignore
+build/
 
 
 
