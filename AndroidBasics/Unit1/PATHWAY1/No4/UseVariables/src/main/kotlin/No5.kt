@@ -1,4 +1,4 @@
 fun main() {
-    val notificationsEnabled: Boolean = true
-    println(notificationsEnabled)
+    val notificationsEnabled: Boolean = false
+    println("Are notifications enabled? " + notificationsEnabled)
 }
