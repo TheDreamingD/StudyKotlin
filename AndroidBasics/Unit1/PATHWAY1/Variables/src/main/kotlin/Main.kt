@@ -17,4 +17,20 @@ fun main() {
     println("You have $count3 unread messages.")
     count3--
     println("You have $count3 unread messages.")
+
+    val nextMeeting = "Next meeting: "
+    val date = "January 1"
+    val reminder = nextMeeting + date + " at work"
+    println(reminder)
+
+    println("Say \"hello\"")
+
+    val notificationsEnabled: Boolean = true
+    println("Are notifications enabled? " + notificationsEnabled)
+
+    /*
+     * 이건
+     * 긴
+     * 주석
+     */
 }
