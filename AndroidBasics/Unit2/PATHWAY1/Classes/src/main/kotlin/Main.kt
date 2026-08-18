@@ -1,5 +1,6 @@
 open/*open 키워드를 사용해야 이 클래스를 상속받는 하위클래스를 만들 수 있음*/ class SmartDevice(val name: String, val category: String) { // 기본생성자는 헤더에 위치하고 본문을 가질 수 없음
     var deviceStatus = "online"
+        protected set // 값의 변경은 클래스와 하위클래스 내부에서만 가능해야 한다. // 값을 그냥 할당하면 괄호와 중괄호를 생략할수있따
 
     open val deviceType = "unknown"
 
@@ -31,14 +32,14 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) { // 매개변수에 var, val을 지정하지 않았다는것은 부모에게 전달하는 역할만 한다는 것
     override val deviceType = "Smart TV"
 
-    var speakerVolume = 2
+    private var speakerVolume = 2
         set(value) {
             if (value in 1..100) {
                 field = value // value는 할당하려는 값이고 이 값을 변수 이름에 할당하지 않고 field에 할당해야 한다.
             }
         }
 
-    var channelNumber = 1
+    private var channelNumber = 1
         set(value) {
             if (value in 0..200) {
                 field = value
@@ -74,7 +75,7 @@ class SmartLightDevice(deviceName: String, deviceCategory: String) :
 
     override val deviceType = "Smart Light"
 
-    var brightnessLevel = 0
+    private var brightnessLevel = 0
         set(value) {
             if (value in 0..100) {
                 field = value
@@ -104,12 +105,16 @@ class SmartHome(
     val smartTvDevice: SmartTvDevice,
     val smartLightDevice: SmartLightDevice
 ) {
+    var deviceTurnOnCount = 0
+        private set
 
     fun turnOnTv() {
+        deviceTurnOnCount++
         smartTvDevice.turnOn()
     }
 
     fun turnOffTv() {
+        deviceTurnOnCount--
         smartTvDevice.turnOff()
     }
 
@@ -122,10 +127,12 @@ class SmartHome(
     }
 
     fun turnOnLight() {
+        deviceTurnOnCount++
         smartLightDevice.turnOn()
     }
 
     fun turnOffLight() {
+        deviceTurnOnCount--
         smartLightDevice.turnOff()
     }
 
