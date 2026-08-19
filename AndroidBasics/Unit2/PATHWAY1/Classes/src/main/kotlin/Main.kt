@@ -1,3 +1,6 @@
+import kotlin.properties.ReadWriteProperty
+import kotlin.reflect.KProperty
+
 open/*open 키워드를 사용해야 이 클래스를 상속받는 하위클래스를 만들 수 있음*/ class SmartDevice(val name: String, val category: String) { // 기본생성자는 헤더에 위치하고 본문을 가질 수 없음
     var deviceStatus = "online"
         protected set // 값의 변경은 클래스와 하위클래스 내부에서만 가능해야 한다. // 값을 그냥 할당하면 괄호와 중괄호를 생략할수있따
@@ -32,19 +35,9 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) { // 매개변수에 var, val을 지정하지 않았다는것은 부모에게 전달하는 역할만 한다는 것
     override val deviceType = "Smart TV"
 
-    private var speakerVolume = 2
-        set(value) {
-            if (value in 1..100) {
-                field = value // value는 할당하려는 값이고 이 값을 변수 이름에 할당하지 않고 field에 할당해야 한다.
-            }
-        }
+    private var speakerVolume by RangeRegulator(initialValue = 2, minValue = 0, maxValue = 100)
 
-    private var channelNumber = 1
-        set(value) {
-            if (value in 0..200) {
-                field = value
-            }
-        }
+    private var channelNumber by RangeRegulator(initialValue = 1, minValue = 0, maxValue = 200)
 
     fun increaseSpeakerVolume() {
         speakerVolume++
@@ -75,12 +68,8 @@ class SmartLightDevice(deviceName: String, deviceCategory: String) :
 
     override val deviceType = "Smart Light"
 
-    private var brightnessLevel = 0
-        set(value) {
-            if (value in 0..100) {
-                field = value
-            }
-        }
+    // setter를 속성 위임으로 초기화하는 방법
+    private var brightnessLevel by RangeRegulator(initialValue = 0, minValue = 0, maxValue = 100)
 
     fun increaseBrightness() {
         brightnessLevel++
@@ -143,6 +132,25 @@ class SmartHome(
     fun turnOffAllDevices() {
         turnOffTv()
         turnOffLight()
+    }
+}
+
+// 속성 위임을 위한 클래스
+class RangeRegulator(
+    initialValue: Int,
+    private val minValue: Int,
+    private val maxValue: Int
+) : ReadWriteProperty<Any?, Int> {
+    var fieldData = initialValue
+
+    override fun getValue(thisRef: Any?, property: KProperty<*>): Int {
+        return fieldData
+    }
+
+    override fun setValue(thisRef: Any?, property: KProperty<*>, value: Int) {
+        if (value in maxValue..maxValue) {
+            fieldData = value
+        }
     }
 }
 
