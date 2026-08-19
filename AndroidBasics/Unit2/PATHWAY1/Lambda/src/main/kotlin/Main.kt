@@ -6,8 +6,8 @@ fun main() {
 //    trickFunction()
 //    treat()
 
-    val coins: (Int) -> String = { quantity ->
-        "$quantity quarters" // return 키워드가 없고 함수의 마지막 표현식을 반환함
+    val coins: (Int) -> String = { // 입력이 있는데 입력값에 대한 변수명을 따로 안주면 it으로 자동생성된다.
+        "$it quarters" // return 키워드가 없고 함수의 마지막 표현식을 반환함
     }
     val cupcake: (Int) -> String = { // 함수의 입력이 Int가 있어도 매개변수를 따로 줄 필요가 없으면 매개변수는 생략해도 된다.
         "Have a cupcake!"
@@ -16,6 +16,16 @@ fun main() {
     val trickFunction = trickOrTreat(true, null)
     treatFunction()
     trickFunction()
+    val treatFunction2 = trickOrTreat(false, { "$it quarters" }) // 람다를 변수에 넣고 그걸 다른 함수의 매개변수에 넣는게 아니고 매개변수 넣는 자리에 바로 함수 본문을 써도 된다.
+    treatFunction2()
+    val treatFunction3 = trickOrTreat(false) { // 마지막 매개변수가 함수면 소괄호 밖으로 빼서 함수 본문을 써도 된다.
+        "$it quarters"
+    }
+    treatFunction3()
+
+    repeat(4) {
+        treatFunction()
+    }
 }
 
 //fun trickOrTreat(isTrick: Boolean): () -> Unit { // 함수의 리턴타입이 함수임
