@@ -17,7 +17,8 @@
 //    val difficulty: String
 //)
 
-class Question<T>( // 제네릭 타입 T를 사용해 위 3개의 클래스를 하나로 만듦
+// 데이터 클래스로 생성하면 toString, equals 등의 함수를 자동으로 만들어준다. 메서드가 없이 값만 있는 클래스를 데이터 클래스로 만들 수 있다.
+data class Question<T>( // 제네릭 타입 T를 사용해 위 3개의 클래스를 하나로 만듦
     val questionText: String,
     val answer: T,
     val difficulty: Difficulty
