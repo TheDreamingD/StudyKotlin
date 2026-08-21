@@ -28,8 +28,25 @@ enum class Difficulty { // 값 집합을 제한할 때 사용. 값을 대분자�
     EASY, MEDIUM, HARD
 }
 
-fun main() {
+class Quiz {
     val question1 = Question<String>("Quoth the raven ___", "nevermore", Difficulty.MEDIUM)
     val question2 = Question<Boolean>("The sky is green. True or false", false, Difficulty.EASY)
     val question3 = Question<Int>("How many days are there between full moons?", 28, Difficulty.HARD)
+
+    // 다른 클래스 내부에 싱글톤 객체를 만들때는 companion을 붙임
+    // 아직은 어떤 장점이 있는지 모르겠음
+    companion object StudentProgress { // 싱글톤 객체, class 대신 object 키워드 사용하면 됨
+        var total: Int = 10
+        var answered: Int = 3
+    }
+}
+
+//object StudentProgress { // 싱글톤 객체, class 대신 object 키워드 사용하면 됨
+//    var total: Int = 10
+//    var answered: Int = 3
+//}
+
+fun main() {
+//    println("${StudentProgress.answered} of ${StudentProgress.total} answered.") // 싱글톤클래스의 데이터에 접근하는 방법
+    println("${Quiz.answered} of ${Quiz.total} answered.") // companion 객체의 데이터에 접근할때는 StudentProgress가 아닌 Quiz를 참조하여 접근함
 }
