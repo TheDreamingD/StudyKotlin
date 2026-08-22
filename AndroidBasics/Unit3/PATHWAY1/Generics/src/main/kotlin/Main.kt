@@ -59,6 +59,42 @@ class Quiz : ProgressPrintable {
         var total: Int = 10
         var answered: Int = 3
     }
+
+    fun printQuiz() {
+        println(question1.questionText)
+        println(question1.answer)
+        println(question1.difficulty)
+        println()
+        println(question2.questionText)
+        println(question2.answer)
+        println(question2.difficulty)
+        println()
+        println(question3.questionText)
+        println(question3.answer)
+        println(question3.difficulty)
+        println()
+
+        // let()을 써서 위 코드를 아래 코드로 바꿀수 있다. 실제 이름대신 it으로 객체를 참조한다.
+
+        question1.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+        question2.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+        question3.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+    }
 }
 
 //val Quiz.StudentProgress.progressText: String // 클래스의 속성인 것처럼 클래스의 속성을 클래스 외부에서 확장해서 선언할 수 있다. 이것이 확장 속성이다.
@@ -86,4 +122,11 @@ fun main() {
 //    Quiz.printProgressBar()
 
     Quiz().printProgressBar() // 이제 클래스 내의 메서드라서 Quiz를 생성하고 메서드를 호출해야 한다.
+
+    val quiz = Quiz()
+    quiz.printQuiz()
+
+    Quiz().apply { // apply를 사용하면 Quiz 클래스의 인스턴스에서 바로 메서드를 호출할 수 있다
+        printQuiz()
+    }
 }
